@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize@1/modern-normalize.min.css"
+    />
+  </head>
+  <style>
+    button:hover {
+      color: #fff !important;
+      background-color: blue !important;
+    }
+
+    .gallery img {
+      width: 220px;
+      height: 200px;
+    }
+
+    .gallery li:hover img {
+      border: 4px solid blue !important;
+      transform: scale(1.05);
+    }
+
+    img {
+      display: block;
+      border-radius: 8px;
+      box-shadow: 15px 15px 15px 5px rgba(17, 2, 0, 0.6) !important;
+      margin: auto;
+    }
+
+    h1 {
+      text-shadow: 15px 15px 15px rgba(17, 2, 0, 0.6) !important;
+      -webkit-text-stroke: 1px yellow;
+    }
+
+    span {
+      -webkit-text-stroke: 1px rgb(0, 0, 0);
+      text-shadow: 5px 5px 5px rgba(17, 2, 0, 0.6) !important;
+    }
+
+    button {
+      -webkit-text-stroke: 1px yellow;
+    }
+
+    .rounded-checkbox input[type="checkbox"] {
+      display: none;
+    }
+
+    .rounded-checkbox label {
+      position: relative;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border: 1px solid tomato;
+      border-radius: 50%;
+    }
+
+    .rounded-checkbox input[type="checkbox"]:checked + label::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 12px;
+      height: 12px;
+      background-color: tomato;
+      border-radius: 50%;
+    }
+  </style>
+  <body
+    style="
+      background-image: url(https://images.pexels.com/photos/1563256/pexels-photo-1563256.jpeg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: rgb(131, 131, 131);
+      color: yellow;
+      font-weight: bold;
+      font-size: 18px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      padding: 0 20px 0 20px;
+    "
+  >
+    <div style="max-width: 1200px; margin: auto">
+      <h1
+        style="
+          color: rgb(223, 55, 55);
+          text-align: center;
+          font-size: 5.3vw;
+          margin: 0;
+          margin-top: 5px;
+          margin-bottom: 10px;
+        "
+      >
+        ГАЛЕРЕЯ БУДИНКІВ
+      </h1>
+      <div
+        class="rounded-checkbox"
+        style="margin-left: 40px; margin-bottom: 15px"
+      >
+        <input type="checkbox" id="myCheckbox" onclick="changeStyle()" />
+        <label for="myCheckbox"></label>
+        <span style="margin-left: 10px">СПРАВДІ ПОВЕРНУТИ ВСЕ ЯК БУЛО?</span>
+      </div>
+
+      <button
+        id="button"
+        onclick="resetNotification()"
+        style="
+          padding: 5px;
+          background-color: tomato;
+          border-radius: 8px;
+          margin-left: 40px;
+          display: block;
+          font-size: 18px;
+          color: #000;
+          font-weight: 500;
+        "
+      >
+        ПОВЕРНУТИ
+      </button>
+      <ul
+        class="gallery"
+        style="
+          list-style: none;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          grid-gap: 20px;
+          width: 100%;
+          padding: 0;
+        "
+      >
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/175032/pexels-photo-175032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/4270292/pexels-photo-4270292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/1563232/pexels-photo-1563232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/548084/pexels-photo-548084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/1493088/pexels-photo-1493088.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/789380/pexels-photo-789380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/417344/pexels-photo-417344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/730256/pexels-photo-730256.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/258447/pexels-photo-258447.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/632522/pexels-photo-632522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/547494/pexels-photo-547494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/259593/pexels-photo-259593.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/1414467/pexels-photo-1414467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/358312/pexels-photo-358312.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+      </ul>
+    </div>
+    <script>
+      // Отримання елемента чекбокса за його id
+      const checkbox = document.getElementById("myCheckbox");
+
+      // Отримання статусу чекбокса (true або false)
+      let isChecked = checkbox.checked;
+      const button = document.getElementById("button");
+      button.style.textDecoration = "line-through";
+
+      function changeStyle() {
+        isChecked
+          ? (button.style.textDecoration = "line-through")
+          : (button.style.textDecoration = "none");
+        isChecked = !isChecked;
+      }
+
+      function showNotification(clickedElement) {
+        clickedElement.style.display = "block";
+        clickedElement.style.margin = "auto";
+        clickedElement.style.fontSize = "28px";
+        clickedElement.style.color = "tomato";
+        clickedElement.style.webkitTextStroke = "1px yellow";
+        clickedElement.innerHTML = "Клікнуто! > Видаляю!";
+        setTimeout(function () {
+          clickedElement.style.display = "none";
+        }, 3000);
+      }
+
+      function resetNotification() {
+        const gallary = document.querySelector(".gallery");
+
+        if (isChecked) {
+          gallary.innerHTML = ` <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/175032/pexels-photo-175032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/4270292/pexels-photo-4270292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/1563232/pexels-photo-1563232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+
+          />
+          <span id="notification" class="notification"></span>
+        </li><li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/548084/pexels-photo-548084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/1493088/pexels-photo-1493088.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/789380/pexels-photo-789380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/417344/pexels-photo-417344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/730256/pexels-photo-730256.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/258447/pexels-photo-258447.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/632522/pexels-photo-632522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/547494/pexels-photo-547494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/259593/pexels-photo-259593.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/1414467/pexels-photo-1414467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+
+          />
+          <span id="notification" class="notification"></span>
+        </li>
+        <li onclick="showNotification(this)">
+          <img
+            style="border: 4px solid tomato"
+            src="https://images.pexels.com/photos/358312/pexels-photo-358312.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+
+          />
+          <span id="notification" class="notification"></span>
+        </li>`;
+        }
+      }
+    </script>
+  </body>
+</html>
