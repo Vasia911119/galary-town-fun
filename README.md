@@ -1,1 +1,1 @@
-# galary-town-fun
+# gallery-town-fun
